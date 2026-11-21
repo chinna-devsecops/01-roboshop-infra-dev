@@ -5,6 +5,6 @@ sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashi
 sudo yum -y install terraform
 
 sudo growpart /dev/nvme0n1 4
-sudo lvextend -L +10G /dev/RootVG/homeVol
+sudo lvextend -L +20G /dev/RootVG/homeVol
 
 sudo xfs_growfs /home

@@ -6,7 +6,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "daws2025.online-remote-state"
+    bucket = "cloudnai.online-remote-state"
     key    = "ec2-module-sg-rules-dev"
     region = "us-east-1"
     encrypt      = true  

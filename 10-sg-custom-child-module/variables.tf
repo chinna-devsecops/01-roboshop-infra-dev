@@ -1,3 +1,18 @@
+variable "project_name" {
+  type = string
+  default = "roboshop"
+}
+
+variable "environment" {
+  type = string
+  default = "dev"
+}
+
+variable "sg_tags" {
+  type = map
+  default = {}
+}
+
 variable "sg_names" {
   default = [
     # databases
@@ -6,11 +21,13 @@ variable "sg_names" {
     "catalogue", "user", "cart", "shipping", "payment",
     # frontend
     "frontend",
+    ##jump host & vpn
     "bastion",
+    "vpn",
     # frontend-lb
-    "frontend-lb",
+    "frontend_lb",
     # backend-lb
-    "backend-lb"
+    "backend_lb"
     ]
 }
 
@@ -30,8 +47,13 @@ variable "sg_description" {
     # frontend
     "created sg for frontend instance",
     "created sg for bastion instance",
+    # frontend-lb
     "created sg for frontend-lb instance",
-    "created sg for backend-lb instance"
+    # backend-lb
+    "created sg for backend-lb instance",
+    ##jump host & vpn
+    "created sg for bastion instance",
+    "created sg for vpn instance",
     ]
 }
 
@@ -174,18 +196,3 @@ variable "sg_description" {
 #   type = string
 #   default = "created sg for cart instance"
 # }
-
-variable "project" {
-  type = string
-  default = "roboshop"
-}
-
-variable "environment" {
-  type = string
-  default = "dev"
-}
-
-variable "sg_tags" {
-  type = map
-  default = {}
-}

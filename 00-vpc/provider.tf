@@ -2,11 +2,11 @@ terraform {
   required_providers {
     aws = {
       source = "hashicorp/aws"
-      version = "5.99.1"
+      version = "6.38.0"
     }
   }
   backend "s3" {
-    bucket = "daws2025.online-remote-state"
+    bucket = "cloudnai.online-remote-state"
     key    = "ec2-module-vpc-roboshop-test"
     region = "us-east-1"
     encrypt      = true  

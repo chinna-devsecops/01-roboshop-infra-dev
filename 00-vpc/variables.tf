@@ -1,9 +1,18 @@
-variable "project" {
+variable "project_name" {
   default = "roboshop"
 }
 
 variable "environment" {
   default = "dev"
+}
+
+variable common_tags {
+    type = map
+    default = {
+        Project = "expense"
+        Environment = "dev"
+        Terraform = "true"
+    }
 }
 
 variable "public_subnet_cidrs" {

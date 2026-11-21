@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "daws2025.online-remote-state"
+    bucket = "daws2025.online-remote-state-new"
     key    = "roboshop-dev-sg-open-source-module"
     region = "us-east-1"
     use_lockfile = true
